@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SplitTextEnglish", "TextEnglish\SplitTextEnglish.csproj", "{C2B7C796-DF37-4070-92BF-BDB5E5DE86CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitTextEnglish", "SplitTextEnglish\SplitTextEnglish.csproj", "{0CA7B258-CFD2-40F9-863E-23DEABAABEEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C2B7C796-DF37-4070-92BF-BDB5E5DE86CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C2B7C796-DF37-4070-92BF-BDB5E5DE86CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C2B7C796-DF37-4070-92BF-BDB5E5DE86CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C2B7C796-DF37-4070-92BF-BDB5E5DE86CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CA7B258-CFD2-40F9-863E-23DEABAABEEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA7B258-CFD2-40F9-863E-23DEABAABEEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA7B258-CFD2-40F9-863E-23DEABAABEEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA7B258-CFD2-40F9-863E-23DEABAABEEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {8AD86039-DA2B-4314-82DA-7DAB5933FBB5}
+		SolutionGuid = {C8CE8D67-9564-4623-BF83-28AD3148BF37}
 	EndGlobalSection
 EndGlobal
