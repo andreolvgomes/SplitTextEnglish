@@ -32,6 +32,13 @@ namespace TextEnglish
 
                 Phrase phrase = phrases[i];
                 this.txtResult.Text += phrase.English.Replace("\r\n", " ");
+
+                if (!string.IsNullOrEmpty(phrase.Transcricao))
+                {
+                    this.txtResult.Text += "\n";
+                    this.txtResult.Text += phrase.Transcricao.Replace("\r\n", " ");
+                }
+
                 this.txtResult.Text += "\n";
                 this.txtResult.Text += phrase.Portuguese.Replace("\r\n", " ");
             }

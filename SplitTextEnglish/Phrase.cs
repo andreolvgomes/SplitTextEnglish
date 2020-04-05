@@ -8,5 +8,6 @@ namespace TextEnglish
     {
         public string English { get; set; }
         public string Portuguese { get; set; }
+        public string Transcricao { get; set; }
     }
 }

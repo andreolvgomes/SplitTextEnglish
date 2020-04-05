@@ -30,7 +30,7 @@ namespace TextEnglish
         {
             if (this.Valida())
             {
-                List<Phrase> phrases = this.GetPhrases(this.txtIngles.Text, this.txtPortugues.Text);
+                List<Phrase> phrases = this.GetPhrases(this.txtIngles.Text, this.txtPortugues.Text, this.txtTrans.Text);
                 Html h = new Html();
                 string html = h.GerHtml(phrases);
 
@@ -49,23 +49,26 @@ namespace TextEnglish
         {
             if (this.Valida())
             {
-                List<Phrase> phrases = this.GetPhrases(this.txtIngles.Text, this.txtPortugues.Text);
+                List<Phrase> phrases = this.GetPhrases(this.txtIngles.Text, this.txtPortugues.Text, this.txtTrans.Text);
                 Result r = new Result(this, phrases);
                 r.ShowDialog();
             }
         }
 
-        private List<Phrase> GetPhrases(string english, string portuguese)
+        private List<Phrase> GetPhrases(string english, string portuguese, string transcricao)
         {
             List<Phrase> list = new List<Phrase>();
             string[] split_en = english.Split('.');
             string[] split_pt = portuguese.Split('.');
+            string[] split_tra = transcricao.Split('.');
 
             for (int i = 0; i < split_en.Length; i++)
             {
                 Phrase phrase = new Phrase();
                 phrase.English = split_en[i].Trim();
                 phrase.Portuguese = split_pt[i].Trim();
+                if (split_tra.Length > 0)
+                    phrase.Transcricao = split_tra[i].Trim();
 
                 list.Add(phrase);
             }
@@ -92,6 +95,15 @@ namespace TextEnglish
                 MessageBox.Show("Texto inglês não contém a mesma quantidade de frases que em português", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return this.SetText(this.txtPortugues);
             }
+            if (!string.IsNullOrEmpty(this.txtTrans.Text))
+            {
+                int number_tra = this.NumberPhrase(this.txtTrans.Text);
+                if (number_en != number_tra)
+                {
+                    MessageBox.Show("Texto inglês não contém a mesma quantidade de frases que a transcrição fonética", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return this.SetText(this.txtTrans);
+                }
+            }
 
             return true;
         }
@@ -117,7 +129,12 @@ namespace TextEnglish
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            this.txtIngles.Text = this.txtPortugues.Text = "";
+            this.txtTrans.Text = this.txtIngles.Text = this.txtPortugues.Text = "";
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://tophonetics.com/pt/");
         }
     }
 }

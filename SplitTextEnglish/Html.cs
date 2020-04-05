@@ -30,7 +30,7 @@ namespace TextEnglish
 english
 </h1>
 <h1 class='two'>
-...........
+.......
 </h1>
 <h2 class='three'>
 portuguese
@@ -47,6 +47,8 @@ portuguese
                 Phrase phrase = phrases[i];
                 newstr = newstr.Replace("english", phrase.English.Replace("\r\n", " "));
                 newstr = newstr.Replace("portuguese", phrase.Portuguese.Replace("\r\n", " "));
+                if (!string.IsNullOrEmpty(phrase.Transcricao))
+                    newstr = newstr.Replace(".......", phrase.Transcricao.Replace("\r\n", " "));
 
                 text += newstr;
             }
