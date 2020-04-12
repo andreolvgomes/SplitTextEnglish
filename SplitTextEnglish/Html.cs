@@ -23,7 +23,7 @@ namespace TextEnglish
         private string footer = @"</body>
 </html>";
 
-        public string GerHtml(List<Phrase> phrases)
+        public string GerHtml(List<Phrase> phrases, bool numerar)
         {
             string format = String.Format(@"
 <h1 class='one'>
@@ -45,7 +45,11 @@ portuguese
 
                 string newstr = format;
                 Phrase phrase = phrases[i];
-                newstr = newstr.Replace("english", phrase.English.Replace("\r\n", " "));
+                if (numerar)
+                    newstr = newstr.Replace("english", (i + 1).ToString() + "-" + phrase.English.Replace("\r\n", " "));
+                else
+                    newstr = newstr.Replace("english", phrase.English.Replace("\r\n", " "));
+
                 newstr = newstr.Replace("portuguese", phrase.Portuguese.Replace("\r\n", " "));
                 if (!string.IsNullOrEmpty(phrase.Transcricao))
                     newstr = newstr.Replace(".......", phrase.Transcricao.Replace("\r\n", " "));

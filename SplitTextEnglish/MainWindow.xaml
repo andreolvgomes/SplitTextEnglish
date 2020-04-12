@@ -6,6 +6,9 @@
         Width="600" WindowStartupLocation="CenterScreen" SizeToContent="Height" ResizeMode="CanMinimize"
         >
     <StackPanel Margin="10">
+
+        <CheckBox Content="Numerar?" x:Name="chkNumberar"/>
+        
         <TextBlock Text="Texto Inglês"/>
         <TextBox x:Name="txtIngles" Height="250" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" TextWrapping="Wrap" Text=""/>
 

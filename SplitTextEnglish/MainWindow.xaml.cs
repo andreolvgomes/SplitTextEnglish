@@ -32,7 +32,7 @@ namespace TextEnglish
             {
                 List<Phrase> phrases = this.GetPhrases(this.txtIngles.Text, this.txtPortugues.Text, this.txtTrans.Text);
                 Html h = new Html();
-                string html = h.GerHtml(phrases);
+                string html = h.GerHtml(phrases, (bool)this.chkNumberar.IsChecked);
 
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "Text Files | *.html";
