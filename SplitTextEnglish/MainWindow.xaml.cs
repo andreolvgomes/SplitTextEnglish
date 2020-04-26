@@ -67,7 +67,7 @@ namespace TextEnglish
                 Phrase phrase = new Phrase();
                 phrase.English = split_en[i].Trim();
                 phrase.Portuguese = split_pt[i].Trim();
-                if (split_tra.Length > 0)
+                if (split_tra.Length > 0 && !string.IsNullOrEmpty(transcricao))
                     phrase.Transcricao = split_tra[i].Trim();
 
                 list.Add(phrase);
